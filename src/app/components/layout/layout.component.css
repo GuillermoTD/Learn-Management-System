@@ -1,7 +1,19 @@
+
+
+
+
+.layout{
+    width:100%;
+    min-height: 96vh;   
+}
+
 .navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10rem 0 10rem;
+    background:var(--third);
+    height:4rem;
 }
 
 .navbar_options{
@@ -10,6 +22,8 @@
     gap:2rem;
     align-items: center;
     justify-content: center;
+    font-size: 1.04rem;
+
 }
 
 .navbar_options li{
@@ -24,20 +38,25 @@
     align-items: center;
     justify-content: center;
     color:white;
-    font-size:1.2rem;
+    font-size:1.8rem;
     height:2rem;
     width:auto;
     margin-top:1rem;
 }
 
-.layout{
+.content{
     width:100%;
-    min-height: 96vh;    
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 
 .inner-content{
-    width: 100%;
+    width: 88.4%;
     height:100%;
+    display: flex;
+    flex-direction: column;
 }
 

@@ -22,14 +22,6 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
   standalone: true,
   styles: [
     `
-      [nz-menu] {
-        line-height: 64px;
-      }
-
-      nz-breadcrumb {
-        margin: 16px 0;
-      }
-
       nz-content {
         padding: 0 2.7%;
       }
@@ -40,8 +32,6 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
       }
 
       .inner-content {
-        background: #fff;
-        padding: 24px;
         min-height: 100vh;
       }
     `,

@@ -1,0 +1,72 @@
+.Hero {
+  width: 100%;
+  height: 32rem;
+  background: linear-gradient(to right, var(--primary), var(--second));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+
+
+  .Hero_Box {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .Hero_Box__Title {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .Hero_Box__Description {
+      font-size: 1.3rem;
+    }
+
+    .Hero_Box__InputBox {
+      height: 10rem;
+      min-width: 18rem;
+      width: 46%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      input {
+        width: 100%;
+        height: 3rem;
+        padding-left: 1.5rem;
+        font-size: 1.01rem;
+        color: black;
+        font-weight: bold;
+        border-radius: 4rem 0 0 4rem;
+      }
+
+      button {
+        height: 3rem;
+        background:var(--second);
+        width: 30%;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 0 4rem 4rem 0;
+      }
+    }
+
+    .Hero_Box__Button {
+      margin-top: 1rem;
+      padding: 0.8rem 2.2rem;
+      border-radius: 2rem;
+      background: var(--bg);
+      cursor: pointer;
+      font-weight: bold;
+      color:var(--primary);
+      font-size:1.02rem;
+
+    }
+  }
+}
+
+

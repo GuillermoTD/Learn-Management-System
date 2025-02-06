@@ -1,0 +1,13 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    .Home_CoursesResume{
+        text-align: center;
+        font-size:2.2rem;
+        padding:2rem;
+        font-weight:bold;
+    }
+}
