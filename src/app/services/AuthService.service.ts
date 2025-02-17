@@ -21,7 +21,10 @@ export class AuthService {
 
     // console.log('Se empieza a llamar la api');
     return this.http
-      .post<UserDTO>(`${this.apiUrl}`, loginRequest, { headers })
+      .post<UserDTO>(`${this.apiUrl}`, loginRequest, {
+        headers,
+        withCredentials: true,
+      })
       .pipe(
         catchError((error) => {
           console.error('No se pudo traer los datos:', error);
@@ -31,9 +34,8 @@ export class AuthService {
   }
 
   handleLoginSuccess(user: UserDTO) {
-    console.log("Dato capturado", user)
+    console.log('Dato capturado', user);
     this.userState.setUSer(user);
-   
   }
 
   //establece el estado del usuario como null para que la sesion sea cerrada

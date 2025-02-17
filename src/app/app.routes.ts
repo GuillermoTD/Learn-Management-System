@@ -9,5 +9,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     { path: 'signup', component: SignupComponent},
     { path: 'courses', component: CoursesPageComponent },
     { path: 'course/:id', component: CoursesPageComponent },
-    { path: '', component: HomeComponent },
+    { path: '', component:HomeComponent},
+    { path: 'home', redirectTo:'/', pathMatch:"full" },
+    { path: '**', redirectTo:'/' },
   ];
+
+  48

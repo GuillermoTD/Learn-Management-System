@@ -10,6 +10,7 @@ import { LoginDTO } from '../../dto/LoginDTO';
 import { Observable } from 'rxjs';
 import { UserDTO } from '../../dto/UserDTO';
 import { UserStateService } from '../../state/UserState.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-box',
@@ -30,14 +31,14 @@ export class LoginBoxComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private userState: UserStateService
+    private userState: UserStateService,
+    private router: Router
   ) {
     this.validateForm = this.fb.group({
       username: this.fb.control('', [Validators.required]),
       password: this.fb.control('', [Validators.required]),
       // remember: this.fb.control(true)
     });
-  
   }
 
   ngOnInit(): void {
@@ -58,10 +59,14 @@ export class LoginBoxComponent {
           this.authService.handleLoginSuccess(user);
           console.log('Dato capturado', user);
 
-          this.userState.user$.subscribe((currentUser)=>{
+          this.userState.user$.subscribe((currentUser) => {
             this.currentUserLogued = currentUser;
-            console.log("Este es el estado del usuario logueado", this.currentUserLogued)
-          })
+            console.log(
+              'Este es el estado del usuario logueado',
+              this.currentUserLogued
+            );
+          });
+          this.redirectToHome() 
         },
         error: (error) => {
           console.error('error de login', error);
@@ -86,5 +91,9 @@ export class LoginBoxComponent {
         }
       });
     }
+  }
+
+  redirectToHome() {
+    this.router.navigate(['/courses']);
   }
 }
