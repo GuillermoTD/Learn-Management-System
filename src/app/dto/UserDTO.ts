@@ -5,4 +5,6 @@ export interface UserDTO {
   email: string;
   token: string;
   registration_date: string;
+  refreshToken: string;
+  refreshTokenExpiry: string;
 }
