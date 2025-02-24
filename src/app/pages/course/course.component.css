@@ -1,0 +1,64 @@
+.Course {
+  width: 100%;
+  height: auto;
+  min-height: 96vh;
+  display: flex;
+  flex-direction: column;
+
+  .Course_TopContainer {
+    background: #1d1e27;
+    height: 25rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    h2 {
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .Course_TopContainer__VideoBox {
+      background: black;
+      width: 25rem;
+      height: 13.4rem;
+    }
+
+    .Course_TopContainer__Reviews {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      height: 3rem;
+
+      .Course_TopContainer__Reviews_Badge {
+        background: green;
+        border-radius: 0.5rem;
+      }
+
+      .Course_TopContainer__Reviews_Rate{
+        margin-top: -4px;
+
+        ul{
+            li{
+                background:red;
+            }
+        }
+      }
+    }
+  }
+
+  .Course_Details{
+    background:red;
+    display: flex;
+    flex-direction: column;
+
+    .Course_Details__Topics{}
+  }
+}

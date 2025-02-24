@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { UserDTO } from '../dto/UserDTO';
 import { LoginDTO } from '../dto/LoginDTO';
 import { UserStateService } from '../state/UserState.service';
@@ -12,7 +12,9 @@ import Cookies from 'js-cookie';
 export class AuthService {
   private apiUrl = 'http://localhost:5007/login';
 
-  constructor(private http: HttpClient, private userState: UserStateService) {}
+  constructor(private http: HttpClient, private userState: UserStateService) {
+    
+  }
 
   Login(loginRequest: LoginDTO): Observable<UserDTO> {
     const headers = new HttpHeaders({
@@ -27,8 +29,13 @@ export class AuthService {
         withCredentials: true,
       })
       .pipe(
+        tap((response) => {
+          //Se establece el token en el cookie
+          this.setToCookieToken(response.token);
+
+        }),
         catchError((error) => {
-          console.error('No se pudo traer los datos:', error);
+          console.error(error);
           return throwError(() => new Error('Error en la autenticación'));
         })
       );
@@ -38,13 +45,13 @@ export class AuthService {
     console.log('Dato capturado', user);
     this.userState.setUSer(user);
   }
-  
+
   //Obtenemos el token del navegador en caso de que este exista
   getCookieToken(): string {
     return Cookies.get('accessToken') || '';
   }
 
-  //Seteamos el token en el navegador 
+  //Seteamos el token en el navegador
   setToCookieToken(token: string): void {
     Cookies.set('accessToken', token, {
       expires: 1,
@@ -54,7 +61,7 @@ export class AuthService {
   }
 
   refreshToken(): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/refresh`, {});
+    return this.http.post<any>(`${this.apiUrl}/refresh-token`, {});
   }
 
   //establece el estado del usuario como null para que la sesion sea cerrada

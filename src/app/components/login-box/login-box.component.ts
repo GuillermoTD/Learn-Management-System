@@ -57,14 +57,14 @@ export class LoginBoxComponent {
       this.authService.Login(loginRequest).subscribe({
         next: (user: UserDTO) => {
           this.authService.handleLoginSuccess(user);
-          console.log('Dato capturado', user);
+          // console.log('Dato capturado', user);
 
           this.userState.user$.subscribe((currentUser) => {
             this.currentUserLogued = currentUser;
-            console.log(
-              'Este es el estado del usuario logueado',
-              this.currentUserLogued
-            );
+            // console.log(
+            //   'Este es el estado del usuario logueado',
+            //   this.currentUserLogued
+            // );
           });
           this.redirectToHome() 
         },
@@ -74,7 +74,7 @@ export class LoginBoxComponent {
       });
 
       console.log(
-        'Este es el nuevo estado con el usuario guardado',
+        // 'Este es el nuevo estado con el usuario guardado',
         this.userState.getUser()
       );
 
@@ -94,6 +94,6 @@ export class LoginBoxComponent {
   }
 
   redirectToHome() {
-    this.router.navigate(['/courses']);
+    this.router.navigate(['/']);
   }
 }

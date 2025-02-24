@@ -5,6 +5,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-layout',
@@ -18,6 +19,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     NzBreadCrumbModule,
     RouterOutlet,
     RouterLink,
+    FooterComponent
   ],
   standalone: true,
   styles: [
