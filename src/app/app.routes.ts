@@ -16,5 +16,3 @@ import { CourseComponent } from './pages/course/course.component';
     { path: 'home', redirectTo:'/', pathMatch:"full" },
     { path: '**', redirectTo:'/' },
   ];
-
-  48

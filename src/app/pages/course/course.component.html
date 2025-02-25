@@ -5,59 +5,155 @@
       <h3>Aprende Javascript de una forma profunda</h3>
 
       <div class="Course_TopContainer__Reviews">
-         4.8 <nz-rate class="Course_TopContainer__Reviews_Rate" [ngModel]="4.8" nzDisabled nzAllowHalf></nz-rate>
+        4.8
+        <nz-rate
+          class="Course_TopContainer__Reviews_Rate"
+          [ngModel]="4.8"
+          nzDisabled
+          nzAllowHalf
+        ></nz-rate>
         <span> 1860 calificaciones 6988 estudiantes </span>
       </div>
-    
+
       <p class="Course_TopContainer__Instructor">Creado por Pablo cruz</p>
 
-      <p class="Course_TopContainer__LastInstructor">Ultima actualizacion 2/2025 Español</p>
-
+      <p class="Course_TopContainer__LastInstructor">
+        Ultima actualizacion 2/2025 Español
+      </p>
     </div>
-    <div class="Course_TopContainer__VideoBox">Video</div>
+    <div class="Course_TopContainer__VideoBox">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-play"
+      >
+        <polygon points="6 3 20 12 6 21 6 3" />
+      </svg>
+    </div>
   </div>
   <div class="Course_Details">
+    <div class="Course_Details__LeftSide">
+      <div class="Course_Details__LeftSide_Topics border PaddingGeneral">
+        <h2>Lo que aprenderás</h2>
+        <ul class="Course_Details__RightSide_Topics__List">
+          <li><p>Convertirte en un desarrollador javascript confiable.</p></li>
+          <li><p>Aprender control de flujo, variables, funciones, etc.</p></li>
+          <li><p>Orientación a objetos con prototipos.</p></li>
+          <li>
+            <p>
+              Conceptos complejos como la palabra reservada this, funciones de
+              alto orden, etc.
+            </p>
+          </li>
+          <li>
+            <p>
+              Practicar tus habilidades con más de 50 ejercicios y desafíos de
+              código con soluciones incluidas.
+            </p>
+          </li>
+          <li><p>Aprender cómo funciona javascript internamente.</p></li>
+          <li><p>Orientación a objetos moderno con clases de ES6.</p></li>
+          <li>
+            <p>
+              Javascript asíncrono con promesas, async/await, ajax, fetch y
+              llamado a apis.
+            </p>
+          </li>
+        </ul>
+      </div>
 
-    <div class="Course_Details__Topics">
-      <h2>Lo que aprenderás</h2>
-      <ul class="Course_Details__Topics_List">
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-        <li><p>Javascript</p></li>
-      </ul>
+   
+
+      <div class="Course_Details__LeftSide_Content border PaddingGeneral">
+        <h2>Content</h2>
+        <span>
+          <p>3 secciones • 3 clases • 1 h 50 m de duración total</p>
+          <p>Ampliar todas las secciones</p>
+        </span>
+
+        <p-accordion>
+          @for (tab of tabs; track tab.title; let i = $index) {
+          <p-accordion-panel [value]="i">
+            <p-accordion-header>{{ tab.title }}</p-accordion-header>
+            <p-accordion-content>
+              <p class="m-0">{{ tab.content }}</p>
+            </p-accordion-content>
+          </p-accordion-panel>
+          }
+        </p-accordion>
+      </div>
+
+      <div class="Course_Details__RightSide_Requisites">
+        <h2>Requisitos</h2>
+        <ul class="Course_Details__RightSide_Requisites__Box">
+          @for (requisite of requisites;track requisite.content; let i = $index)
+          {
+          <li>{{ requisite.content }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="Course_Details__RightSide_Description">
+        <h2>Description</h2>
+        <p>
+          ¡Domina JavaScript y lleva tus habilidades de programación al
+          siguiente nivel! En este curso completo, aprenderás todo lo necesario
+          para dominar JavaScript, desde los conceptos básicos hasta las
+          técnicas más avanzadas. Te guiaremos a través de los fundamentos
+          esenciales, como variables, funciones, objetos y arrays, hasta llegar
+          a temas complejos como la programación orientada a objetos,
+          asincronía, manipulación del DOM y la integración con herramientas
+          modernas. Al finalizar, serás capaz de desarrollar aplicaciones
+          dinámicas, optimizar tu código y aplicar las mejores prácticas en el
+          desarrollo web.
+        </p>
+      </div>
+
+      <div class="Course_Details__RightSide_InstructorInfo">
+        <h2>Instructor</h2>
+        <p>Pablo Cruz</p>
+      </div>
+
+      <div class="Course_Details__RightSide_Reviews">Reviews</div>
     </div>
 
-    <div class="Course_Details__ExtraInfo">
-      <h2>Este curso incluye</h2>
-      <ul class="Course_Details__ExtraInfo_List">
-        <li><p>18 horas</p></li>
-        <li><p>18 horas</p></li>
-        <li><p>18 horas</p></li>
-        <li><p>18 horas</p></li>
-      </ul>
+    <div class="Course_Details__RightSide border PaddingGeneral">
+      <div class="Course_Details__RightSide_Lateral">
+        <span><strong>11,99 US$</strong></span>
+
+        <div class="Course_Details__RightSide_Lateral__Buttons">
+          <span>
+            <button>Añadir a la cesta</button>
+
+            <button class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-heart"
+              >
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+            </button>
+          </span>
+          <button>Comprar ahora</button>
+        </div>
+      </div>
     </div>
-
-    <div class="Course_Details__Content">Content</div>
-
-    <div class="Course_Details__Requisites">Requisitos</div>
-
-    <div class="Course_Details__Description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, maxime.
-    </div>
-
-    <div class="Course_Details__InstructorInfo">
-      <h2>Instructor</h2>
-      <p>Pablo Cruz</p>
-    </div>
-
-    <div class="Course_Details__Reviews">Reviews</div>
-
-    <div class="Course_Details__Lateral">Lateral</div>
-
   </div>
 </div>

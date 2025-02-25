@@ -1,18 +1,34 @@
+@import "tailwindcss";
+
 .Course {
   width: 100%;
   height: auto;
   min-height: 96vh;
   display: flex;
   flex-direction: column;
+  transition: 0.3s ease-in-out;
+
+  h2 {
+    @apply text-[1.5rem] font-bold;
+  }
+
+  .border {
+    @apply border-[0.14rem] border-slate-200;
+  }
+
+  .PaddingGeneral {
+    padding: 2rem;
+  }
 
   .Course_TopContainer {
     background: #1d1e27;
-    height: 25rem;
+    height: 28rem;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    margin-top:2rem;
+    @apply gap-[8%] pl-[10%] pr-[10%];
 
     h2 {
       color: white;
@@ -26,9 +42,11 @@
     }
 
     .Course_TopContainer__VideoBox {
-      background: black;
-      width: 25rem;
-      height: 13.4rem;
+      @apply bg-slate-950 w-[25rem] h-[13.4rem] flex flex-col justify-center items-center cursor-pointer;
+
+      svg{
+        @apply w-[3rem] h-[3rem];
+      }
     }
 
     .Course_TopContainer__Reviews {
@@ -42,23 +60,109 @@
         border-radius: 0.5rem;
       }
 
-      .Course_TopContainer__Reviews_Rate{
+      .Course_TopContainer__Reviews_Rate {
         margin-top: -4px;
 
-        ul{
-            li{
-                background:red;
-            }
+        ul {
+          li {
+            background: red;
+          }
         }
       }
     }
   }
 
-  .Course_Details{
-    background:red;
-    display: flex;
-    flex-direction: column;
+  .Course_Details {
+    @apply flex flex-row gap-[8%] pl-[10%] pr-[10%] p-[2rem];
 
-    .Course_Details__Topics{}
+    .Course_Details__LeftSide {
+      @apply min-w-[40%] w-[57%] flex flex-col gap-[2rem];
+
+      .Course_Details__LeftSide_Topics {
+        .Course_Details__RightSide_Topics__List {
+          @apply grid mt-[2rem];
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem; /* Espacio entre los elementos */
+
+          li{
+
+          }
+        }
+      }
+
+      .Course_Details__LeftSide_ExtraInfo {
+        .Course_Details__RightSide_ExtraInfo_List {
+          @apply grid mt-[2rem];
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+      }
+
+      .Course_Details__LeftSide_Content {
+        span {
+          @apply flex justify-between items-center h-[2rem];
+        }
+      }
+
+      .Course_Details__LeftSide_Requisites {
+        .Course_Details__RightSide_Requisites__Box {
+          li {
+            list-style: inside;
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .Course_Details__LeftSide_Description {
+        p {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .Course_Details__RightSide {
+      @apply h-[21rem] w-[26%];
+
+      .Course_Details__RightSide_Lateral {
+        @apply h-full w-full flex flex-col items-center;
+
+        span{
+          @apply flex w-full;
+
+          strong{
+            @apply text-[1.7rem] mb-[1.1rem] ;
+
+          }
+        }
+
+        .Course_Details__RightSide_Lateral__Buttons {
+          @apply flex flex-col gap-[0.6rem];
+
+          button {
+            @apply px-[1.3rem] py-[0.6rem] cursor-pointer text-[1.04rem] font-bold ;
+            background:var(--second);
+          }
+
+          span {
+            @apply flex gap-[0.5rem];
+
+            button{
+              @apply bg-white border;
+              background:none;
+              border:solid var(--second);
+            }
+
+            .icon {
+              @apply bg-white border;
+              border:solid var(--second);
+
+              svg {
+                @apply w-[1.5rem] h-[1.5rem];
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

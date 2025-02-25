@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { AuthInterceptor } from './services/AuthInterceptor.interceptor';
+import Aura from '@primeng/themes/aura';
+import { providePrimeNG } from 'primeng/config';
 
 registerLocaleData(es);
 
@@ -27,5 +29,10 @@ export const appConfig: ApplicationConfig = {
       withFetch(),// permite hacer hacer peticiones http con la api de fetch de javascript
       withInterceptors([AuthInterceptor]),// permite que Angular que ejecute los interceptors registrados
     ),
+    providePrimeNG({
+      theme: {
+          preset: Aura
+      }
+  })
   ],
 };

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"npm run watch-tailwind\" \"ng serve\"",
+    "watch-tailwind": "watch \"rimraf .angular/cache\" ./tailwind.config.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,9 +19,15 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "@primeng/themes": "^19.0.8",
+    "@tailwindcss/postcss": "^4.0.8",
     "js-cookie": "^3.0.5",
     "ng-zorro-antd": "^19.0.2",
+    "postcss": "^8.5.3",
+    "primeng": "^19.0.8",
+    "remixicon": "^4.6.0",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.0.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -30,6 +37,7 @@
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
     "@types/js-cookie": "^3.0.6",
+    "concurrently": "^9.1.2",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
