@@ -1,2 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+.Page {
+  @apply w-full h-auto min-h-[96vh] flex flex-col;
+  transition: 0.3s ease-in-out;
+}
+
+.AccordionTitle {
+  @apply text-[0.92rem] font-bold;
+}
+
+.stars {
+  svg {
+    @apply text-yellow-400;
+  }
+}
+
+.p-rating {
+  div {
+    span {
+      @apply bg-red-500;
+    }
+  }
+}

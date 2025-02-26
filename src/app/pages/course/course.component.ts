@@ -19,6 +19,6 @@ export class CourseComponent {
   ];
 
   requisites = [
-    {content:"Solo necesitas una Pc, internet y muchisimas granas de aprender"}
+    {content:"Solo necesitas una Pc, internet y muchisimas ganas de aprender"}
   ]
 }

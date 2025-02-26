@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.SearchPage {
+  @apply flex flex-col ;
+
+  .SearchPage_TopFilterPanel{
+    /* @apply bg-orange-400; */
+  }
+
+  .SearchPage_Content{
+    @apply h-[90vh] flex justify-center gap-[2rem];
+
+
+    .SearchPage_Content__SideFilterPanel{
+        @apply  w-[22%];
+
+    }
+
+    .SearchPage_Content__CoursesFiltered{
+        @apply w-[50%];
+    }
+  }
+
+  h2 {
+    @apply text-[1.5rem] font-bold;
+  }
+
+  .border {
+    @apply border-[0.11rem] border-slate-200;
+  }
+
+  .PaddingGeneral {
+    padding: 2rem;
+  }
+}

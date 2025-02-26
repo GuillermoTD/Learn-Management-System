@@ -13,7 +13,7 @@
   }
 
   .border {
-    @apply border-[0.14rem] border-slate-200;
+    @apply border-[0.11rem] border-slate-200;
   }
 
   .PaddingGeneral {
@@ -27,7 +27,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:2rem;
     @apply gap-[8%] pl-[10%] pr-[10%];
 
     h2 {
@@ -139,7 +138,7 @@
           @apply flex flex-col gap-[0.6rem];
 
           button {
-            @apply px-[1.3rem] py-[0.6rem] cursor-pointer text-[1.04rem] font-bold ;
+            @apply px-[1.3rem] py-[0.6rem] cursor-pointer text-[1.04rem] font-bold text-white ;
             background:var(--second);
           }
 
@@ -150,6 +149,7 @@
               @apply bg-white border;
               background:none;
               border:solid var(--second);
+              color:black;
             }
 
             .icon {

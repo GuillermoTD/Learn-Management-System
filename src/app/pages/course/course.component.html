@@ -81,7 +81,7 @@
         <p-accordion>
           @for (tab of tabs; track tab.title; let i = $index) {
           <p-accordion-panel [value]="i">
-            <p-accordion-header>{{ tab.title }}</p-accordion-header>
+            <p-accordion-header >{{ tab.title }}</p-accordion-header>
             <p-accordion-content>
               <p class="m-0">{{ tab.content }}</p>
             </p-accordion-content>
