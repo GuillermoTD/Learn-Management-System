@@ -10,16 +10,7 @@
   @apply text-[0.92rem] font-bold;
 }
 
-.stars {
-  svg {
-    @apply text-yellow-400;
-  }
-}
 
-.p-rating {
-  div {
-    span {
-      @apply bg-red-500;
-    }
-  }
-}
+
+
+

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+.FilteredCourseItem {
+  @apply h-[12rem] overflow-hidden flex;
+  *{
+    @apply text-slate-800;
+  }
+
+  .FilteredCourseItem_Image {
+    @apply h-full w-[40%];
+
+    img {
+      @apply h-full w-full object-fill;
+    }
+  }
+
+  .FilteredCourseItem_Description {
+    @apply p-[1rem] flex flex-col gap-[0.18rem];
+
+    .FilteredCourseItem_Description__Title {
+      @apply text-[1.6rem] font-bold;
+    }
+
+    .FilteredCourseItem_Description__Description {
+      @apply text-[0.92rem];
+    }
+
+    .FilteredCourseItem_Description__InstructorInfo {
+      @apply font-semibold;
+    }
+    .FilteredCourseItem_Description__Rate {
+      @apply flex items-center  gap-[1rem];
+
+      p {
+        @apply text-center font-bold;
+        margin-top:1rem;
+      }
+    }
+  }
+}

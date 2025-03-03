@@ -1,8 +1,5 @@
+@import "tailwindcss";
+
 .LoginPage{
-    width:100%;
-    height:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @apply w-full min-h-[96vh] h-full flex flex-col items-center justify-center;
 }

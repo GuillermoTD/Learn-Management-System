@@ -1,41 +1,54 @@
-.login-form {
-  /* max-width: 300px; */
-  width:100%;
-}
+@import "tailwindcss";
 
-.login-form-margin {
-  margin-bottom: 16px;
-}
+.LoginBox {
+  @apply shadow-2xl min-w-[55vw] w-[50%] min-h-[60vh] h-[20%] flex items-center justify-center;
 
-.login-form-forgot {
-  float: right;
-}
+  .LoginBox_Greetings {
+    @apply w-[50%] h-full bg-[var(--third)] p-[1rem] flex flex-col 
+            justify-center items-center gap-[0.4rem];
 
-.login-form-button {
-  width: 100%;
-}
+    * {
+      @apply text-slate-200;
+    }
 
-.LoginBox{
-  width:calc(50% + 15rem);
-  min-height:30rem;
-  height:25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    h2 {
+      @apply text-[2rem] font-bold;
+    }
 
-  h2{
-    font-size:2rem;
+    p {
+      @apply text-[1.05rem] text-center w-[70%];
+    }
+
+    button {
+      @apply px-[2.8rem] py-[0.8rem] border border-slate-400 text-[1.2rem] cursor-pointer;
+    }
   }
 
-  input{
-    padding:0.4rem 0 0.4rem 0;
-    font-size:18px;
-  }
+  .LoginBox_LoginForm {
+    @apply w-[50%] h-full p-[1rem] flex flex-col gap-[1.5rem] items-center justify-center;
 
-  button{
-    height:3rem;
+    .LoginBox_LoginForm__Title {
+      @apply text-[2.5rem] font-bold;
+    }
+
+    .LoginBox_LoginForm__SocialNetworks {
+      @apply flex gap-[0.8rem];
+    }
+
+    .LoginBox_LoginForm__Inputs {
+      @apply w-[70%] flex flex-col gap-[1rem];
+
+      .LoginBox_LoginForm__Inputs_Container {
+        @apply flex flex-col gap-[4rem];
+
+        input {
+          @apply px-[1.2rem] py-[0.8rem] w-full  bg-slate-100 text-[1.0002rem];
+        }
+      }
+    }
+
+    .LoginBox_LoginForm__SubmitButton {
+      @apply bg-slate-900 py-[1rem] px-[4rem] text-slate-200 text-[1.02rem] cursor-pointer;
+    }
   }
 }
-
-

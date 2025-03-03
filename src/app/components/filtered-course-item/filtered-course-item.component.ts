@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { RatingModule } from 'primeng/rating';
-import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-filtered-course-item',
-  imports: [RatingModule,FormsModule],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, RatingModule,RouterLink],
   templateUrl: './filtered-course-item.component.html',
-  styleUrl: './filtered-course-item.component.css'
+  styleUrls: ['./filtered-course-item.component.css']
 })
 export class FilteredCourseItemComponent {
-  value: number = 3;
+  ratingForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.ratingForm = this.fb.group({
+      value: [3], // Valor inicial (puede ser null o un número)
+    });
+  }
+
+  submit() {
+    console.log('Valor seleccionado:', this.ratingForm.value);
+  }
 }

@@ -17,7 +17,7 @@
     }
 
     .SearchPage_Content__CoursesFiltered{
-        @apply w-[50%];
+        @apply w-[50%] flex flex-col gap-[0.7rem] overflow-x-hidden overflow-scroll;
     }
   }
 

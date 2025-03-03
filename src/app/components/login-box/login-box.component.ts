@@ -37,6 +37,7 @@ export class LoginBoxComponent {
     this.validateForm = this.fb.group({
       username: this.fb.control('', [Validators.required]),
       password: this.fb.control('', [Validators.required]),
+      email: this.fb.control('', [Validators.required]),
       // remember: this.fb.control(true)
     });
   }
@@ -46,6 +47,7 @@ export class LoginBoxComponent {
   }
 
   submitForm(): void {
+    console.log("hola");
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
 
@@ -78,11 +80,7 @@ export class LoginBoxComponent {
         this.userState.getUser()
       );
 
-      // this.currentUser = this.userState.user$.subscribe({
-      //   next:(response)=>{
-      //     return response
-      //   }
-      // })
+    
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {
@@ -90,8 +88,11 @@ export class LoginBoxComponent {
           control.updateValueAndValidity({ onlySelf: true });
         }
       });
+      console.log("no funciona");
     }
   }
+
+  
 
   redirectToHome() {
     this.router.navigate(['/']);
