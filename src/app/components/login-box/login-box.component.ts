@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -25,7 +30,7 @@ import { Router } from '@angular/router';
   styleUrl: './login-box.component.css',
 })
 export class LoginBoxComponent {
-  validateForm;
+  loginForm!: FormGroup;
   currentUserLogued: UserDTO | null | undefined;
 
   constructor(
@@ -34,65 +39,40 @@ export class LoginBoxComponent {
     private userState: UserStateService,
     private router: Router
   ) {
-    this.validateForm = this.fb.group({
+    this.loginForm = this.fb.group({
       username: this.fb.control('', [Validators.required]),
-      password: this.fb.control('', [Validators.required]),
-      email: this.fb.control('', [Validators.required]),
+      password: this.fb.control('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
       // remember: this.fb.control(true)
     });
   }
 
-  ngOnInit(): void {
-    console.log('se ejecuto');
-  }
+  // ngOnInit(): void {
+  //   console.log('se ejecuto');
+  // }
 
   submitForm(): void {
-    console.log("hola");
-    if (this.validateForm.valid) {
-      console.log('submit', this.validateForm.value);
+    console.log('hola');
 
-      const loginRequest: LoginDTO = {
-        username: this.validateForm.value.username!,
-        password: this.validateForm.value.password!,
-      };
-
-      this.authService.Login(loginRequest).subscribe({
-        next: (user: UserDTO) => {
-          this.authService.handleLoginSuccess(user);
-          // console.log('Dato capturado', user);
-
-          this.userState.user$.subscribe((currentUser) => {
-            this.currentUserLogued = currentUser;
-            // console.log(
-            //   'Este es el estado del usuario logueado',
-            //   this.currentUserLogued
-            // );
-          });
-          this.redirectToHome() 
-        },
-        error: (error) => {
-          console.error('error de login', error);
-        },
-      });
-
-      console.log(
-        // 'Este es el nuevo estado con el usuario guardado',
-        this.userState.getUser()
-      );
-
-    
-    } else {
-      Object.values(this.validateForm.controls).forEach((control) => {
-        if (control.invalid) {
-          control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
-        }
-      });
-      console.log("no funciona");
+    try {
+      if (this.loginForm.valid) {
+        console.log('Formulario valido', this.loginForm.value);
+        this.authService.Login(this.loginForm.value).subscribe({
+          next: (user: UserDTO) => {
+            console.log('usuario logueado', user);
+            this.redirectToHome();
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+      }
+    } catch (error: any) {
+      console.log(error.message);
     }
   }
-
-  
 
   redirectToHome() {
     this.router.navigate(['/']);

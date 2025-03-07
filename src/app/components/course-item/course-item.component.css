@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .CourseItem {
   min-width: 20rem;
   width: 33%;
@@ -5,6 +7,7 @@
   height: 20rem;
   overflow: hidden;
   place-self: center;
+  @apply text-slate-900;
   
 
   .CourseItem_Image{

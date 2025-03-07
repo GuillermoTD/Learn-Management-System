@@ -16,7 +16,7 @@ export class AuthService {
     
   }
 
-  Login(loginRequest: LoginDTO): Observable<UserDTO> {
+  Login(loginCredentials: LoginDTO): Observable<UserDTO> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': 'http://localhost:4200',
@@ -24,7 +24,7 @@ export class AuthService {
 
     // console.log('Se empieza a llamar la api');
     return this.http
-      .post<UserDTO>(`${this.apiUrl}`, loginRequest, {
+      .post<UserDTO>(`${this.apiUrl}`, loginCredentials, {
         headers,
         withCredentials: true,
       })
@@ -32,6 +32,7 @@ export class AuthService {
         tap((response) => {
           //Se establece el token en el cookie
           this.setToCookieToken(response.token);
+          console.log("usuario logueado")
 
         }),
         catchError((error) => {

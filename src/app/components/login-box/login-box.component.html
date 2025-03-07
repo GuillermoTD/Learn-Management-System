@@ -7,7 +7,7 @@
   </div>
 
   <!-- Formulario de inicio de sesión -->
-  <form [formGroup]="validateForm" class="LoginBox_LoginForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="loginForm" class="LoginBox_LoginForm" (ngSubmit)="submitForm()">
     <div class="LoginBox_LoginForm__Title">LOGIN</div>
 
     <!-- Redes sociales -->
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Botón de envío -->
-    <button type="submit" class="LoginBox_LoginForm__SubmitButton" (click)="submitForm()" [disabled]="validateForm.invalid">
+    <button type="submit" class="LoginBox_LoginForm__SubmitButton" >
       Login
     </button>
   </form>
