@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+
+.Navbar{
+    @apply h-[4rem] bg-[var(--third)] text-white flex justify-between items-center px-[6%];
+
+    *{
+        @apply text-[white];
+    }
+    
+    .Navbar_Logo{
+        @apply text-[1.86rem] mt-[1rem] flex h-[70%] justify-center items-center gap-[0.4rem];
+
+        a{
+            
+        }
+    }
+
+    .Navbar_Options{
+        @apply flex gap-[1.5rem] items-center;
+
+        *{
+            @apply cursor-pointer text-[0.999rem];
+        }
+
+        .option1{
+        }
+
+        .option2 svg{
+            @apply hover:fill-red-500 ease-in-out transition duration-100;
+        }
+
+        .option3 svg{
+            @apply hover:fill-white ease-in-out transition duration-100;
+        }
+
+        .option4{
+            @apply w-[3rem] h-[3rem] bg-[var(--second)] rounded-full flex items-center;
+        }
+      
+       
+    }
+    
+}

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { UserDTO } from '../dto/UserDTO';
 import { LoginDTO } from '../dto/LoginDTO';
-import { UserStateService } from '../state/UserState.service';
 import Cookies from 'js-cookie';
+import { UserStateService } from '../state/UserState.service';
 
 @Injectable({
   providedIn: 'root',

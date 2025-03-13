@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
-import { SidebarFilterAccordionComponent } from '../../components/sidebar-filter-accordion/sidebar-filter-accordion.component';
-import { FilteredCourseItemComponent } from '../../components/filtered-course-item/filtered-course-item.component';
+import { SidebarFilterAccordionComponent } from '../../shared/components/sidebar-filter-accordion/sidebar-filter-accordion.component';
+import { FilteredCourseItemComponent } from '../../shared/components/filtered-course-item/filtered-course-item.component';
 
 
 @Component({
