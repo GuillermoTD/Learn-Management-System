@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
-import { homeGuard } from './guards/home.guard';
-import { CourseComponent } from './pages/course/course.component';
-import { SearchComponent } from './pages/search/search.component';
-import { loginGuard } from './guards/login.guard';
-import { coursesGuard } from './guards/courses.guard';
+import { homeGuard } from './features/home/guards/home.guard';
+import { coursesGuard } from './features/courses/guards/courses.guard';
+import { loginGuard } from './features/login/guards/login.guard';
+import { SearchComponent } from './features/search/search.component';
+import { CourseComponent } from './features/courses/course.component';
+import { SignupComponent } from './features/signup/signup.component';
+import { LoginComponent } from './features/login/login.component';
+import { HomeComponent } from './features/home/home.component';
+import { CoursesPageComponent } from './features/courses/pages/courses-page/courses-page.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [loginGuard] },

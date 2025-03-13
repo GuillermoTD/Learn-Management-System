@@ -6,6 +6,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { FooterComponent } from '../footer/footer.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-layout',
@@ -19,25 +20,10 @@ import { FooterComponent } from '../footer/footer.component';
     NzBreadCrumbModule,
     RouterOutlet,
     RouterLink,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   standalone: true,
-  styles: [
-    `
-      nz-content {
-        padding: 0 2.7%;
-      }
-
-      nz-footer {
-        text-align: center;
-        height: 3.7rem;
-      }
-
-      .inner-content {
-        min-height: 100vh;
-      }
-    `,
-  ],
 
 })
 export class LayoutComponent {}

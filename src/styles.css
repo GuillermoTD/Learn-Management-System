@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
+
+
 .Page {
   @apply w-full h-auto min-h-[96vh] flex flex-col;
   transition: 0.3s ease-in-out;
