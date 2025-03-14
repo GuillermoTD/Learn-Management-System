@@ -5,8 +5,14 @@ import { RouterLink } from '@angular/router';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports:[RouterLink],
+  imports: [RouterLink],
 })
-export class NavbarComponent {
 
+export class NavbarComponent {
+  isVisiblePopper = false;
+
+  changeVisiblePopper(){
+    this.isVisiblePopper = !this.isVisiblePopper;
+    console.log("funciona");
+  }
 }
