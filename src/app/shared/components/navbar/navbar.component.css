@@ -11,13 +11,12 @@
   }
 }
 
-.popper {
-  @apply bg-white absolute w-[15rem] h-[25rem] top-[3.5rem] right-[-2rem]
-           shadow-2xl text-red-900 flex flex-col ;
+.NavbarPopper {
+  @apply bg-white absolute w-[15rem] h-[25rem] top-[3.5rem] right-[1rem]
+           shadow-2xl text-red-900 flex flex-col;
+        
   animation: zoom-in 0.1s ease-out forwards;
-
 }
-
 
 .Navbar {
   @apply h-[4rem] bg-[var(--third)] text-white flex justify-between items-center px-[6%];
@@ -49,11 +48,16 @@
     }
 
     .option4 {
-      @apply w-[3rem] h-[3rem] bg-[var(--second)] rounded-full flex items-center relative ;
+      div {
+        color: black;
+      }
 
-     div{
-      color:black;
-     }
+      .option4_UserProfileImage {
+        @apply w-[3rem] h-[3rem] bg-[var(--second)] rounded-full flex items-center relative;
+      }
+
+    
+      
     }
   }
 }

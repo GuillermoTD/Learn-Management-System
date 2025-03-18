@@ -11,8 +11,12 @@ import { RouterLink } from '@angular/router';
 export class NavbarComponent {
   isVisiblePopper = false;
 
-  changeVisiblePopper(){
-    this.isVisiblePopper = !this.isVisiblePopper;
-    console.log("funciona");
+
+  onMouseEnter(): void {
+    this.isVisiblePopper =  !this.isVisiblePopper
+  }
+
+  onMouseLeave(): void {
+    this.isVisiblePopper =  !this.isVisiblePopper;
   }
 }

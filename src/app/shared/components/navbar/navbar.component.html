@@ -57,11 +57,21 @@
         />
       </svg>
     </span>
-    <span class="option4" (click)="changeVisiblePopper()">
-      <!-- <img src="" alt="" /> -->
+    <span class="option4">
+      <div
+        class="option4_UserProfileImage"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+      >
+        <img src="" alt="user" />
+      </div>
 
       @if(isVisiblePopper){
-      <div class="popper">
+      <div
+        class="NavbarPopper"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+      >
         <div>my learn</div>
         <div>my cart</div>
         <div>my wishlist</div>
