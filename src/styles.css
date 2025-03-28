@@ -2,8 +2,6 @@
 @import "tailwindcss";
 
 
-
-
 .Page {
   @apply w-full h-auto min-h-[96vh] flex flex-col;
   transition: 0.3s ease-in-out;
@@ -12,7 +10,6 @@
 .AccordionTitle {
   @apply text-[0.92rem] font-bold;
 }
-
 
 
 /* HTML: <div class="loader"></div> */

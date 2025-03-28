@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { UserDTO } from '../dto/UserDTO';
+import { UserDTO } from '../../dto/UserDTO';
+
 
 @Injectable({
   providedIn: 'root',

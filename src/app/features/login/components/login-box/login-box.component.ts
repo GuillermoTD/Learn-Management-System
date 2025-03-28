@@ -12,9 +12,9 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginDTO } from '../../../../dto/LoginDTO';
 import { UserDTO } from '../../../../dto/UserDTO';
-import { UserStateService } from '../../../../state/UserState.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/AuthService.service';
+import { UserStateService } from '../../../../shared/state/UserState.service';
 
 @Component({
   selector: 'app-login-box',

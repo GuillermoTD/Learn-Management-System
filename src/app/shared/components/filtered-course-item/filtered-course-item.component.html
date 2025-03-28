@@ -1,16 +1,16 @@
 <a routerLink="/course/5" class="FilteredCourseItem">
   <div class="FilteredCourseItem_Image">
     <img
-      src="https://img-c.udemycdn.com/course/480x270/5422984_16fc_2.jpg"
+      [src]="courseFrontImage"
       alt="course-image"
     />
   </div>
   <div class="FilteredCourseItem_Description">
     <div class="FilteredCourseItem_Description__Title">
-      Mastering Javascript - Actualizado
+      {{title}}
     </div>
     <div class="FilteredCourseItem_Description__Description">
-      Aprende Javascript de una forma profunda
+      {{description}}
     </div>
     <div class="FilteredCourseItem_Description__InstructorInfo">Pablo Cruz</div>
     <div class="FilteredCourseItem_Description__Rate">
@@ -19,6 +19,6 @@
         <p-rating formControlName="value"></p-rating>
       </form>
     </div>
-    <div class="FilteredCourseItem_Description__General"></div>
+    <div class="FilteredCourseItem_Description__General"></div> 
   </div>
 </a>

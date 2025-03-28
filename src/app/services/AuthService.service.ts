@@ -4,7 +4,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
 import { UserDTO } from '../dto/UserDTO';
 import { LoginDTO } from '../dto/LoginDTO';
 import Cookies from 'js-cookie';
-import { UserStateService } from '../state/UserState.service';
+import { UserStateService } from '../shared/state/UserState.service';
 
 @Injectable({
   providedIn: 'root',

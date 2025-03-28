@@ -1,19 +1,44 @@
 <div class="Page SearchPage">
-  <div class="SearchPage_TopFilterPanel">FilterPanel</div>
+  <div class="SearchPage_TopFilterPanel">
+    <span
+      ><strong
+        >{{ Courses.length }}
+        {{ CoursesSearched.length === 1 ? "resultado" : "resultados" }} de
+        "Javascript"</strong
+      ></span
+    >
+    <div class="SearchPage_TopFilterPanel_Input">
+      <input
+        class="border border-red-500"
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="inputText"
+        (keyup.enter)="GetCoursesBySearch(inputText)"
+      />
+    </div>
+  </div>
+
   <div class="SearchPage_Content">
     <div class="SearchPage_Content__SideFilterPanel">
-   
-      <app-sidebar-filter-accordion/>
+      <app-sidebar-filter-accordion />
     </div>
-    <div class="SearchPage_Content__CoursesFiltered ">
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
-        <app-filtered-course-item/>
+    <div class="SearchPage_Content__CoursesFiltered">
+      @for (Course of Courses; track Course.id) {
+      <app-filtered-course-item
+        [id]="Course?.id"
+        [title]="Course.title"
+        [description]="Course.description"
+        [courseFrontImage]="Course.courseFrontImage"
+      />
+      } @empty {
+      <li>There are no items.</li>
+      }
+
+      <!-- @for(course of Courses; track Courses.description){
+          <li>{{course.description}}</li>
+        }@empty{
+          <li>No se encontraron cursos</li>
+        } -->
     </div>
   </div>
 </div>
