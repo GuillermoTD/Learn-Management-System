@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet,RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -19,7 +19,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
     NzIconModule,
     NzBreadCrumbModule,
     RouterOutlet,
-    RouterLink,
     FooterComponent,
     NavbarComponent
   ],

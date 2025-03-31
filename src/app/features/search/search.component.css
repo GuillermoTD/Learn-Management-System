@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
 .SearchPage {
-  @apply flex flex-col ;
+  @apply flex flex-col items-center;
 
   .SearchPage_TopFilterPanel{
-    /* @apply bg-orange-400; */
+    @apply min-w-[90vh] w-[72%]  h-[6rem] flex justify-between items-center;
+
+    span{
+      @apply text-[2rem];
+    }
+
+    input{
+      @apply pl-[1rem] w-[20rem] h-[3rem];
+    }
+
   }
 
   .SearchPage_Content{

@@ -5,13 +5,21 @@ import Cookies from 'js-cookie';
 export const loginGuard: CanActivateFn = (route, state) => {
   const accessToken = Cookies.get('accessToken');
   const router = inject(Router);
+  let redirectionUrl = '';
 
-  if (accessToken != undefined) {
-    console.log('el token ya ta creao');
-    router.navigate(['/']);
-    return false;
-  }
+  // if (accessToken == undefined) {
+  //   const Route_Attempted_Access = state.url;
+  //   // if (Route_Attempted_Access != '/login') {
+  //   //   // redirectionUrl = Route_Attempted_Access;
+  //   //   // router.navigate([redirectionUrl]);
+  //   //   // return true;  
+  //   //   console.log(Route_Attempted_Access);
+  //   // }
 
-  console.log('el token aun no ta creao');
+  //   router.navigate(['/']);
+  //   return true;
+  // }
+
+  console.log('Hubo un fallo');
   return true;
 };

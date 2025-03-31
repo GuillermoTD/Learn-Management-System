@@ -5,8 +5,18 @@ import { RouterLink } from '@angular/router';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports:[RouterLink],
+  imports: [RouterLink],
 })
-export class NavbarComponent {
 
+export class NavbarComponent {
+  isVisiblePopper = false;
+
+
+  onMouseEnter(): void {
+    this.isVisiblePopper =  !this.isVisiblePopper
+  }
+
+  onMouseLeave(): void {
+    this.isVisiblePopper =  !this.isVisiblePopper;
+  }
 }

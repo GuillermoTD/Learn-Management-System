@@ -35,6 +35,7 @@
               "src/theme.less",
               "src/styles.css",
               "src/app/app.component.css"
+             
               
             ],
             "scripts": []

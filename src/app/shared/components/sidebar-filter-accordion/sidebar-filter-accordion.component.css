@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.ng-untouched{
+    @apply w-2 mr-[2rem];
+}
+
+
+.ng-untouched[_ngcontent-ng-c2277932779]{
+    @apply mr-4;
+}

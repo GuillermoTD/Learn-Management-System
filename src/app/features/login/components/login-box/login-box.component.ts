@@ -12,9 +12,9 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginDTO } from '../../../../dto/LoginDTO';
 import { UserDTO } from '../../../../dto/UserDTO';
-import { UserStateService } from '../../../../state/UserState.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/AuthService.service';
+import { UserStateService } from '../../../../shared/state/UserState.service';
 
 @Component({
   selector: 'app-login-box',
@@ -32,6 +32,7 @@ import { AuthService } from '../../../../services/AuthService.service';
 export class LoginBoxComponent {
   loginForm!: FormGroup;
   currentUserLogued: UserDTO | null | undefined;
+  loaderIsVisible: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -50,13 +51,19 @@ export class LoginBoxComponent {
 
     if (this.loginForm.valid) {
       console.log('Formulario válido', this.loginForm.value);
+      //hacemos visible el loader
+      this.loaderIsVisible = !this.loaderIsVisible;
+
       this.authService.Login(this.loginForm.value).subscribe({
         next: (user: UserDTO) => {
           console.log('Usuario logueado', user);
+          //hacemos invisible el loader
+          this.loaderIsVisible = !this.loaderIsVisible;
           this.redirectToHome();
         },
         error: (err) => {
           console.log('Error al iniciar sesión', err);
+          this.loaderIsVisible = false;
         },
       });
     } else {
