@@ -21,7 +21,6 @@ export const homeGuard: CanActivateFn = (
 
   router.navigate(['/login']);
   console.log(state);
-  console.log("hola")
 
   return false;
 };

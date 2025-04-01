@@ -7,7 +7,7 @@
   }
 
   .FilteredCourseItem_Image {
-    @apply h-full w-[40%];
+    @apply h-full w-[35%] border-amber-200 border-[8px];
 
     img {
       @apply h-full w-full object-fill;

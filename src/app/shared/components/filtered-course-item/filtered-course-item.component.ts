@@ -21,13 +21,12 @@ export class FilteredCourseItemComponent {
     });
   }
  
-  @Input() id:string | undefined;
+  @Input() id?:string | undefined;
   @Input() title:string | undefined;
   @Input() description:string | undefined;
   @Input() courseFrontImage:string | undefined;
 
   ngOnInit(){
-    console.log(this.title);
   }
 
   submit() {

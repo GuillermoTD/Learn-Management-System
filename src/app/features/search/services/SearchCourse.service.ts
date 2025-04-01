@@ -28,7 +28,17 @@ export class SearchCourseService {
   constructor(private http: HttpClient) {}
 
   SearchCourses(title: string): Observable<CoursesDTO[]> {
-    console.log('se ejecuto');
+
+    if(title == null){
+      return this.http.get<CoursesDTO[]>(
+        this.apiUrl2 + `/${title}?pageNumber=1&pageSize=10`,
+        {
+          headers: this.headers,
+          withCredentials: true,
+        }
+      );
+    }
+
     return this.http.get<CoursesDTO[]>(
       this.apiUrl + `/${title}?pageNumber=1&pageSize=10`,
       {

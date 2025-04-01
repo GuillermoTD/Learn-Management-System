@@ -23,15 +23,11 @@ export class HomeSearcCourse {
   constructor(private http: HttpClient) {}
 
   ngOnInit(){
-    console.log("esto funciona dique")
-    this.FetchCourses("mongo");
-    console.log("esto funciona dique");
   }
 
-  FetchCourses(title: string): Observable<CoursesDTO[]> {
-    console.log('se ejecutó');
+  FetchCourses(): Observable<CoursesDTO[]> {
     return this.http.get<CoursesDTO[]>(
-      this.apiUrl + `/search/${title}?pageNumber=2&pageSize=10`,
+      this.apiUrl + `?pageNumber=1&pageSize=10`,
       {
         headers: this.headers,
         withCredentials: true,

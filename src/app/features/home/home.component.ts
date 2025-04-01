@@ -24,13 +24,9 @@ export class HomeComponent {
   }
 
   GetAllCourses() {
-    this.HomeSearchService.FetchCourses('mongo').subscribe(
+    this.HomeSearchService.FetchCourses().subscribe(
       (Courses: CoursesDTO[]) => {
         this.CoursesSearched = Courses;
-        // console.log(this.CoursesSearched.price);
-        this.CoursesSearched.forEach((course) => {
-          console.log(course);
-        });
       }
     );
   }

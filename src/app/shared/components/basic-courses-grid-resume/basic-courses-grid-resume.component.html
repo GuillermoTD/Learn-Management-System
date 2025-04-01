@@ -1,10 +1,10 @@
 <div class="CoursesGrid">
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
-    <app-course-item/>
+    @for (Course of Courses; track Course?.id) {
+        <app-course-item
+          [id]="Course?.id"
+          [title]="Course.title"
+          [description]="Course.description"
+          [courseFrontImage]="Course.courseFrontImage"
+        />
+        }
 </div>

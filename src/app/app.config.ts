@@ -15,6 +15,7 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { AuthInterceptor } from './services/AuthInterceptor.interceptor';
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
+import { MessageService } from 'primeng/api';
 
 registerLocaleData(es);
 
@@ -29,6 +30,7 @@ export const appConfig: ApplicationConfig = {
       withFetch(),// permite hacer hacer peticiones http con la api de fetch de javascript
       withInterceptors([AuthInterceptor]),// permite que Angular que ejecute los interceptors registrados
     ),
+    MessageService,
     providePrimeNG({
       theme: {
           preset: Aura

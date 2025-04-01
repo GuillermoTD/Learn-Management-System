@@ -1,18 +1,23 @@
 <div class="Page SearchPage">
+  <p-toast></p-toast>
+
   <div class="SearchPage_TopFilterPanel">
-    <span
-      ><strong
-        >{{ Courses.length }}
-        {{ CoursesSearched.length === 1 ? "resultado" : "resultados" }} de
-        "Javascript"</strong
-      ></span
-    >
+    <span>
+      @if(ShowNumberOfResults){
+        <strong>
+          {{ Courses.length }}
+          {{ CoursesSearched.length === 1 ? "resultado" : "resultados" }} de
+          "Javascript"
+        </strong>
+      }
+     
+    </span>
     <div class="SearchPage_TopFilterPanel_Input">
       <input
         class="border border-red-500"
         type="text"
         placeholder="Search"
-        [(ngModel)]="inputText"
+        (input)="onInputChange($event)"
         (keyup.enter)="GetCoursesBySearch(inputText)"
       />
     </div>
@@ -23,7 +28,7 @@
       <app-sidebar-filter-accordion />
     </div>
     <div class="SearchPage_Content__CoursesFiltered">
-      @for (Course of Courses; track Course.id) {
+      @for (Course of Courses; track Course?.id) {
       <app-filtered-course-item
         [id]="Course?.id"
         [title]="Course.title"
