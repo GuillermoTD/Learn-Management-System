@@ -4,7 +4,6 @@ import { BasicCoursesGridResumeComponent } from '../../shared/components/basic-c
 import { SearchCourseService } from '../search/services/SearchCourse.service';
 import { CoursesDTO } from '../../dto/CoursesDTO';
 import { HomeSearcCourse } from './services/HomeSearchService.service';
-import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-home',

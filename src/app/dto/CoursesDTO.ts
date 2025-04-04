@@ -11,6 +11,8 @@ export interface CoursesDTO {
   enrolled_Students: number;
   ratings: RatingDTO[];
   creation_Date: string;
+  learningGoals: LearningGoals[];
+  course_videos:ItemVideo[];
 }
 
 interface LessonDTO {
@@ -23,4 +25,13 @@ export interface RatingDTO {
   userId: string;
   commentary: string;
   rate: number;
+}
+
+export interface LearningGoals {
+  goals: string[];
+}
+
+export interface ItemVideo{
+  description:string;
+  video:string;
 }

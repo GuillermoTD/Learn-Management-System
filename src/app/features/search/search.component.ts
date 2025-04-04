@@ -22,7 +22,7 @@ import { ButtonModule } from 'primeng/button';
   ],
   providers: [MessageService],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'], // ✅ Corrección aquí
+  styleUrls: ['./search.component.css'], 
 })
 export class SearchComponent {
   public Courses: CoursesDTO[] = [];
