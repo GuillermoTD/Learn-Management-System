@@ -3,7 +3,7 @@ import { homeGuard } from './features/home/guards/home.guard';
 import { coursesGuard } from './features/courses/guards/courses.guard';
 import { loginGuard } from './features/login/guards/login.guard';
 import { SearchComponent } from './features/search/search.component';
-import { CourseComponent } from './features/courses/course.component';
+import {CourseItemPageComponent } from './features/courses/courseItemPage.component';
 import { SignupComponent } from './features/signup/signup.component';
 import { LoginComponent } from './features/login/login.component';
 import { HomeComponent } from './features/home/home.component';
@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [loginGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'courses', component: CoursesPageComponent,canActivate: [coursesGuard] },
-  { path: 'course/:id', component: CourseComponent,canActivate: [coursesGuard] },
+  { path: 'course/:id', component: CourseItemPageComponent,canActivate: [coursesGuard] },
   { path: 'search', component: SearchComponent,canActivate: [loginGuard]  },
   { path: '', component: HomeComponent, canActivate: [homeGuard] },
   { path: 'home', redirectTo: '/', pathMatch: 'full' },

@@ -1,18 +1,17 @@
 <div class="Page SearchPage">
-  <p-toast></p-toast>
-
+  <!-- <p-button (onClick)="showErrorToast()" label="Show" /> -->
   <div class="SearchPage_TopFilterPanel">
     <span>
       @if(ShowNumberOfResults){
-        <strong>
-          {{ Courses.length }}
-          {{ CoursesSearched.length === 1 ? "resultado" : "resultados" }} de
-          "Javascript"
-        </strong>
+      <strong>
+        {{ Courses.length }}
+        {{ CoursesSearched.length === 1 ? "resultado" : "resultados" }} de
+        "Javascript"
+      </strong>
       }
-     
     </span>
     <div class="SearchPage_TopFilterPanel_Input">
+      <p-toast></p-toast>
       <input
         class="border border-red-500"
         type="text"
@@ -27,23 +26,22 @@
     <div class="SearchPage_Content__SideFilterPanel">
       <app-sidebar-filter-accordion />
     </div>
+
     <div class="SearchPage_Content__CoursesFiltered">
-      @for (Course of Courses; track Course?.id) {
+      @for (Course of Courses; track Course?.id) { @if(Course == null){
+      <div>
+        <h3 class="text-[1.2rem]">
+          Lo sentimos, no hemos encontrado resultados para shikao :c
+        </h3>
+      </div>
+      }@else{
       <app-filtered-course-item
         [id]="Course?.id"
-        [title]="Course.title"
-        [description]="Course.description"
-        [courseFrontImage]="Course.courseFrontImage"
+        [title]="Course?.title"
+        [description]="Course?.description"
+        [courseFrontImage]="Course?.courseFrontImage"
       />
-      } @empty {
-      <li>There are no items.</li>
-      }
-
-      <!-- @for(course of Courses; track Courses.description){
-          <li>{{course.description}}</li>
-        }@empty{
-          <li>No se encontraron cursos</li>
-        } -->
+      } }
     </div>
   </div>
 </div>

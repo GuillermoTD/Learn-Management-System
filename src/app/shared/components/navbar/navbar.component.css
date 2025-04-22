@@ -16,7 +16,20 @@
            shadow-2xl text-red-900 flex flex-col;
         
   animation: zoom-in 0.1s ease-out forwards;
+
+  .CircleHeader{
+    @apply w-[4rem] h-[4rem] bg-[var(--second)] rounded-full flex items-center relative ;
+  }
+
+  .NavbarPopper_Header{
+    @apply flex items-center justify-evenly mb-[1.1rem];
+
+    span{
+      @apply text-slate-950;
+    }
+  }
 }
+
 
 .Navbar {
   @apply h-[4rem] bg-[var(--third)] text-white flex justify-between items-center px-[6%];
@@ -59,5 +72,9 @@
     
       
     }
+  }
+
+  .NavbarPopper_Block{
+    @apply w-full bg-sky-600;
   }
 }

@@ -1,9 +1,6 @@
-<a routerLink="/course/5" class="CourseItem">
+<div (click)="GoToCourse()" class="CourseItem">
   <div class="CourseItem_Image">
-    <img
-      [src]="courseFrontImage"
-      alt="course-image"
-    />
+    <img [src]="courseFrontImage" alt="course-image" />
   </div>
   <div class="CourseItem_Title">Mastering Javascript</div>
   <div class="CourseItem_InstructorName">Guillermo Tapia</div>
@@ -12,4 +9,4 @@
     <nz-rate [ngModel]="4.8" nzDisabled nzAllowHalf></nz-rate>
   </div>
   <div class="CourseItem_Price">49,99 US$</div>
-</a>
+</div>

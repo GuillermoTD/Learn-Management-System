@@ -72,6 +72,6 @@ export class LoginBoxComponent {
   }
 
   redirectToHome(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'],{ replaceUrl: true });
   }
 }

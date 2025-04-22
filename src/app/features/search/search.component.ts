@@ -6,6 +6,7 @@ import { CoursesDTO } from '../../dto/CoursesDTO';
 import { SearchCourseService } from './services/SearchCourse.service';
 import { FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
+import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 
@@ -18,11 +19,12 @@ import { ButtonModule } from 'primeng/button';
     FilteredCourseItemComponent,
     FormsModule,
     ButtonModule,
-    ToastModule,
+    Toast,
+    ToastModule
   ],
   providers: [MessageService],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'], 
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   public Courses: CoursesDTO[] = [];
@@ -60,19 +62,22 @@ export class SearchComponent {
       return;
     }
 
+    console.log('hola');
+
     this.CourseService.SearchCourses(title).subscribe(
       (CoursesSearched: CoursesDTO[]) => {
+        console.log('Resultado de la búsqueda:', CoursesSearched);  // Ver el resultado de la búsqueda
         this.Courses = CoursesSearched;
         this.ShowNumberOfResults = true;
-
-        if (this.Courses.length === 0) {
+  
+        if (this.Courses.length === 0 || this.Courses == null) {
           console.log('No se encontraron cursos');
-          this.showToast(
-            'warn',
-            'Búsqueda vacía',
-            'No se encontraron cursos con ese nombre.'
-          );
+          this.showErrorToast('No se encontró el curso');
         }
+      },
+      (error) => {
+        console.error('Error en la búsqueda:', error);
+        this.showErrorToast('Hubo un error en la búsqueda');
       }
     );
   }
@@ -82,11 +87,22 @@ export class SearchComponent {
     console.log('Nuevo valor:', this.inputText);
   }
 
+  showErrorToast(message?:string) {
+    console.log("se supone que esto funciona")
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: message,
+      life: 3000,
+    });
+  }
+
   showToast(
     severity: 'success' | 'info' | 'warn' | 'error',
     summary: string,
     detail: string
   ): void {
+    console.log("hola")
     this.messageService.add({ severity, summary, detail, life: 3000 });
   }
 }
